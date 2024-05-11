@@ -33,6 +33,22 @@ Accounts such as usernames MUST be set up first in order for the organization of
 
 Make sure the DOJ: Inbox board is made public or the API will not be able to write to it.
 
+## WeKan Initial Setup
+
+We can use "snap save wekan" to save a current snapshot.
+We can then use the following steps to move the existing Wekan board we used for testing over to the new server so we can avoid importing the trello json because this json would need to be converted correctly also, which would include further testing to make sure the import is correct.
+
+Using the snapshot from snap we can already have all users and files already set up ready to go.
+
+sudo snap ack /path/to/your/snapshot-file.assert
+sudo snap restore <snapshot-id>
+
+Current snapshot id = 2_wekan_6.09_1999.zip
+
+we can then "snap start wekan"
+we can also "snap stop wekan"
+
+
 ## Built With
 
 * [Wekan Installed via snap]([http://www.dropwizard.io/1.0.2/docs/](https://github.com/wekan/wekan-snap/wiki/Install#run-wekan-on-local-network-on-selected-port-on-computer-ip-address)) - The Kanban Style Board
