@@ -1,0 +1,33 @@
+function sendToWekan() {
+  var sheet = SpreadsheetApp.openById('1SjlXEq6UHMAdpmOShuDjT39JRgYmgz6kdHYUZCuPuik').getActiveSheet();
+  var lastRow = sheet.getLastRow();
+  var data = sheet.getRange(lastRow, 1, 1, sheet.getLastColumn()).getValues()[0];
+
+  var title = data[1] + " vs. " + data[3]; // Column B vs Column D for title
+  var description = `Date of Incident: ${data[6]}\n\n` +
+                    `Plaintiff Discord Name: ${data[1]}\n\n\n` +
+                    `Lawsuit Type: ${data[5]}\n\n\n` +
+                    `Description of Incident: ${data[7]}\n\n\n` +
+                    `Evidence Link: ${data[8]}\n\n\n` +
+                    `Additional Comments: ${data[9]}\n\n\n` +
+                    `Date Case Submitted: ${data[0]}`;
+
+  var payload = {
+    authorId: "NnXtrjxjkNxPD3ayQ",
+    boardId: "WowKh8oXN6TisMecF",
+    swimlaneId: "PZfwkcrdSphoEFdvK",
+    listId: "HiWv8R9qSDg3dsfEM",
+    title: title,
+    description: description
+  };
+
+  var options = {
+    method: 'post',
+    contentType: 'application/json',
+    payload: JSON.stringify(payload),
+    muteHttpExceptions: true
+  };
+
+  var response = UrlFetchApp.fetch('http://165.227.108.40:5001/addcard', options);
+  Logger.log(response.getContentText());
+}
