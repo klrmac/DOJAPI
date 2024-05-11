@@ -3,9 +3,9 @@ import requests
 
 app = Flask(__name__)
 
-WEKAN_API_URL = "http://165.227.108.40:5000"
-USERNAME = "DOJAdmin"
-PASSWORD = "DOJPass"
+WEKAN_API_URL = "http://host:5000"
+USERNAME = "ADMIN"
+PASSWORD = "PASS"
 
 def get_wekan_token():
     response = requests.post(f"{WEKAN_API_URL}/users/login", json={"username": USERNAME, "password": PASSWORD})
