@@ -40,8 +40,9 @@ We can then use the following steps to move the existing Wekan board we used for
 
 Using the snapshot from snap we can already have all users and files already set up ready to go.
 
-'sudo snap ack /path/to/your/snapshot-file.assert'
-'sudo snap restore <snapshot-id>'
+Use: sudo snap ack /path/to/your/snapshot-file.assert
+
+Then: sudo snap restore <snapshot-id>
 
 "Current snapshot id = 2_wekan_6.09_1999.zip"
 
