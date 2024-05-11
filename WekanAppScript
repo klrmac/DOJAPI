@@ -1,5 +1,5 @@
 function sendToWekan() {
-  var sheet = SpreadsheetApp.openById('1SjlXEq6UHMAdpmOShuDjT39JRgYmgz6kdHYUZCuPuik').getActiveSheet();
+  var sheet = SpreadsheetApp.openById('SPREADSHEETID').getActiveSheet();
   var lastRow = sheet.getLastRow();
   var data = sheet.getRange(lastRow, 1, 1, sheet.getLastColumn()).getValues()[0];
 
